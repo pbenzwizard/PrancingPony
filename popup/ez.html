@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="ez.css" />
+</head>
+
+<body>
+  <div id="collapse" onclick="hidebar()">◉</div>
+  <div id="logger">
+    <input class="tgl tgl-skewed" id="cb3" type="checkbox" />
+    <label id="lbl-ch" class="tgl-btn" data-tg-off="Existing" data-tg-on="New" for="cb3"></label>
+    <select id="issue-selector">
+      <option value="req">Requirements Review</option>
+      <option value="dev">Development</option>
+      <option value="cr">Code Review</option>
+      <option value="fix">Development Fixes</option>
+      <option value="dep">Deployment</option>
+    </select>
+    <button class="log-button" onclick="jira(&quot;m&quot;, 15)">15 min</button>
+    <button class="log-button" onclick="jira(&quot;m&quot;, 30)">30 min</button>
+    <button class="log-button" onclick="jira(&quot;h&quot;, 1)">1 hr</button>
+    <button class="log-button" onclick="jira(&quot;h&quot;, 2)">2 hr</button>
+    <input id="comment-logger" placeholder="comment" />
+  </div>
+</body>
+
+</html>

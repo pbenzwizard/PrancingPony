@@ -1,0 +1,29 @@
+{
+
+  "manifest_version": 2,
+  "name": "EZ JIRA",
+  "version": "1.0",
+
+  "description": "Makes time logging for repetitive tasks easier.",
+  "icons": {
+    "128": "icons/ez.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/ez.png",
+    "default_title": "EZ JIRA",
+    "default_popup": "popup/ez.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.pcgus.com/*"],
+      "js": ["content_scripts/ezjira.js"]
+    }
+  ]
+
+}

@@ -1,0 +1,76 @@
+var min15 = document.createElement('button');
+min15.className = "log-button";
+min15.setAttribute("onclick", 'jira("m", 15)');
+min15.textContent = "15 min";
+var min30 = document.createElement('button');
+min30.className = "log-button";
+min30.setAttribute("onclick", 'jira("m", 30)');
+min30.textContent = "30 min";
+var min60 = document.createElement('button');
+min60.className = "log-button";
+min60.setAttribute("onclick", 'jira("h", 1)');
+min60.textContent = "1 hr";
+var min120 = document.createElement('button');
+min120.className = "log-button";
+min120.setAttribute("onclick", 'jira("h", 2)');
+min120.textContent = "2 hr";
+logger.appendChild(min15);
+logger.appendChild(min30);
+logger.appendChild(min60);
+logger.appendChild(min120);
+
+
+
+https://productsupport.pcgus.com/browse/UBS-4587
+
+
+
+
+'/*'+
+'  $.ajax(settings).done(function (response) {'+
+'    console.log(response);'+
+'  });'+
+'*/'+
+
+var funcy = document.createElement('script');
+funcy.textContent = ''+
+'function hidebar() {'+
+'    var x = document.getElementById("logger");'+
+'    if (x.style.display === "none") {'+
+'        x.style.display = "flex";'+
+'    } else {'+
+'        x.style.display = "none";'+
+'    }'+
+'} '+
+'function jira(t, i) {'+
+'  var url = window.location.href;'+
+'  url = url.replace("browse", "rest/api/latest/issues/");'+
+'  url = url.concat("/worklog");'+
+'  var timestamp = (new Date()).toISOString();'+
+'  if (timestamp.endsWith("Z")) {'+
+'    timestamp = timestamp.replace("Z", "+0000");'+
+'  }'+
+'  var comment = document.getElementById("comment-logger").value;'+
+'  var settings = {'+
+'    "async": true,'+
+'    "crossDomain": true,'+
+'    "url": url,'+
+'    "method": "POST",'+
+'    "headers": {'+
+'      "content-type": "application/json",'+
+'      "cache-control": "no-cache"'+
+'    },'+
+'    "processData": false,'+
+'    "data": "{\r\n\"timeSpent\": \""+i+t+"\",\r\n\"started\": \""+timestamp+"\",\r\n\"comment\": \""+comment+"\"\r\n}"'+
+'  };'+
+'  console.log(settings);'+
+'}';
+
+
+
+
+'"data": {
+  "timeSpent": "'+i+t+'",
+  "started": "'+timestamp+'",
+  "comment": "'+comment+'"
+}''
